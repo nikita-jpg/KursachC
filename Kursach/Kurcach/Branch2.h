@@ -2,10 +2,12 @@
 #define BRUNCH2
 #include "Base.h"
 
-class Branch2 :public Base
+class Branch2 : public Base
 {
-public:
 	using Base::Base;
+	public:
+		void p_signal(string& text);
+		void p_hendler(string text);
 };
 
 

@@ -148,6 +148,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Base.cpp" />
+    <ClCompile Include="Branch2.cpp" />
+    <ClCompile Include="Branch3.cpp" />
     <ClCompile Include="Kurcach.cpp" />
     <ClCompile Include="Root.cpp" />
   </ItemGroup>

@@ -1,0 +1,4 @@
+﻿  Root.cpp
+C:\Users\Nikita\Desktop\KursachC++\KursachC\Kursach\Kurcach\Root.cpp(84,12): warning C4101: hendler: неиспользованная локальная переменная
+C:\Users\Nikita\Desktop\KursachC++\KursachC\Kursach\Kurcach\Root.cpp(83,11): warning C4101: signal: неиспользованная локальная переменная
+  Kurcach.vcxproj -> C:\Users\Nikita\Desktop\KursachC++\KursachC\Kursach\x64\Debug\Kurcach.exe

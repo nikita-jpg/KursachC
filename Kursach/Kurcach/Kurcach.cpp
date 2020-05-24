@@ -5,12 +5,7 @@ using namespace std;
 
 int main()
 {
-	string name_root;
-	cin >> name_root;
-	Root root(NULL, name_root, 1, 1);
-	root.start();
-	root.printHierarchyTree(true,0);
-	root.searchObjects();
-
-	return 0;
+	Root root(NULL);
+	root.start();//Отвечает за создание дерева иерархии
+	return root.exec_app();
 }

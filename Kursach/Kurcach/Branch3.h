@@ -4,8 +4,10 @@
 
 class Branch3 :public Base
 {
-public:
 	using Base::Base;
+	public:
+	void p_signal(string& text);
+	void p_hendler(string text);
 };
 
 #endif 
