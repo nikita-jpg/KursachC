@@ -1,4 +1,10 @@
-﻿  Root.cpp
-C:\Users\Nikita\Desktop\KursachC++\KursachC\Kursach\Kurcach\Root.cpp(84,12): warning C4101: hendler: неиспользованная локальная переменная
-C:\Users\Nikita\Desktop\KursachC++\KursachC\Kursach\Kurcach\Root.cpp(83,11): warning C4101: signal: неиспользованная локальная переменная
+﻿  Base.cpp
+C:\Users\Nikita\Desktop\KursachC++\KursachC\Kursach\Kurcach\Base.cpp(95,46): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+  Root.cpp
+C:\Users\Nikita\Desktop\KursachC++\KursachC\Kursach\Kurcach\Root.cpp(94,12): warning C4101: hendler: неиспользованная локальная переменная
+C:\Users\Nikita\Desktop\KursachC++\KursachC\Kursach\Kurcach\Root.cpp(93,11): warning C4101: signal: неиспользованная локальная переменная
+  Создание кода...
+C:\Users\Nikita\Desktop\KursachC++\KursachC\Kursach\Kurcach\Root.cpp(161): warning C4715: Root::getSignal: значение возвращается не при всех путях выполнения
+C:\Users\Nikita\Desktop\KursachC++\KursachC\Kursach\Kurcach\Root.cpp(174): warning C4715: Root::getHendler: значение возвращается не при всех путях выполнения
+  LINK : не найден или не выполнена сборка C:\Users\Nikita\Desktop\KursachC++\KursachC\Kursach\x64\Debug\Kurcach.exe при последней инкрементной компоновке; выполняется полная компоновка
   Kurcach.vcxproj -> C:\Users\Nikita\Desktop\KursachC++\KursachC\Kursach\x64\Debug\Kurcach.exe
