@@ -6,6 +6,16 @@
 #include "Branch6.h"
 #include <iostream>
 
+Root::Root(Base* parent) :Base(parent, "root")
+{
+	this->class_number = 1;
+}
+Root::Root(Base* parent, string name) : Base(parent, name)
+{
+	this->class_number = 1;
+}
+
+
 int Root::exec_app()
 {
 	this->buildConnects();
@@ -34,11 +44,11 @@ void Root::start()
 			switch (class_number_object)
 			{
 			case 2:
-				new Branch2(par, name_object, class_number_object, status_object);
+				new Branch2(par, name_object);
 				break;
 
 			case 3:
-				new Branch3(par, name_object, class_number_object, status_object);
+				new Branch3(par, name_object);
 				break;
 			}
 		}
@@ -93,8 +103,8 @@ void Root::buildConnects()
 		objectSignaling = this->findParent(nameSignaling);
 		objectTarger = this->findParent(nameTarget);
 
-		objectSignaling->set_connect(Base::getSignal(objectSignaling->getClassNumber()),
-			objectTarger, Base::getHendler(objectTarger->getClassNumber()));
+		objectSignaling->set_connect(Root::getSignal(objectSignaling->getClassNumber()),
+			objectTarger, Root::getHendler(objectTarger->getClassNumber()));
 
 		Note* note = new Note;
 		note->number = number;
@@ -111,13 +121,12 @@ void Root::showConnects()
 {
 	cout << "\nSet connects";
 
-	for (int i = 0; i < history.size();i++)
+	for (int i = 0; i < history.size(); i++)
 	{
 		cout << "\n" << history[i]->number << " " << history[i]->nameSignal
 			<< " " << history[i]->nameTarget;
 	}
 }
-
 void Root::initSignals()
 {
 	string nameObject, message;
@@ -132,28 +141,43 @@ void Root::initSignals()
 		cin >> message;
 		objectSignalling = this->findParent(nameObject);
 		objectSignalling->emit_signal(
-			Base::getSignal(objectSignalling->getClassNumber()), message);
+			Root::getSignal(objectSignalling->getClassNumber()), message);
 
 		cin >> nameObject;
 	}
 }
 
-void Root::p_signal(string& text)
+T_SIGNAL Root::getSignal(int classNumber)
 {
-	text = " Text: " + this->getName() + " -> " + text;
+	switch (classNumber)
+	{
+	case 1:
+		return SIGNAL_D(Root, p_signal);
+	case 2:
+		return SIGNAL_D(Branch2, p_signal);
+	case 3:
+		return SIGNAL_D(Branch3, p_signal);
+	}
 }
-void Root::p_hendler(string text)
+
+T_HENDLER Root::getHendler(int classNumber)
 {
-	cout  << "Signal to " << this->getName().c_str() << text;
+	switch (classNumber)
+	{
+	case 1:
+		return HENDLER_D(Root, p_hendler);
+	case 2:
+		return HENDLER_D(Branch2, p_hendler);
+	case 3:
+		return HENDLER_D(Branch3, p_hendler);
+	}
 }
 
 Root::~Root()
 {
-	for(int i = 0;i<history.size();i++)
+	for (int i = 0; i < history.size(); i++)
 	{
 		delete history[i];
 	}
 }
-
-
 //К_Новое
